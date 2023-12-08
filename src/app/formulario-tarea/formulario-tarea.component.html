@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <h1>Crear Tarea</h1>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="mt-3">
+      <div class="form-group">
+        <label for="code">Code:</label><br />
+        <input type="number" id="code" formControlName="code" />
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="name">name:</label><br />
+        <input type="text" id="name" formControlName="name" />
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="description">description:</label><br />
+        <input type="text" id="description" formControlName="description" />
+      </div>
+      <input type="hidden" formControlName="done" value="false" />
+      <br>
+    <button type="submit" [disabled]="myForm.invalid" class="btn btn-primary">
+        Enviar
+    </button>
+    </form>
+  </div>
+  

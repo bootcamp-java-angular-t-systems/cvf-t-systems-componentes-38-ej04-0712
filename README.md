@@ -1,27 +1,43 @@
-# UD38EJ04
+# Documentación de la Aplicación de TODO List en Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
+## Descripción General:
 
-## Development server
+La aplicación de TODO List desarrollada en Angular consta de dos componentes principales: `ListaTareas` y `FormularioTarea`. La aplicación permite a los usuarios agregar nuevas tareas, marcar tareas como completadas y eliminar tareas de la lista.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Componente `ListaTareas`:
 
-## Code scaffolding
+El componente `ListaTareas` es responsable de mostrar la lista de tareas y manejar las acciones relacionadas con las tareas, como marcar como completada y eliminar. Cada tarea en la lista tiene un título, una descripción y un botón para eliminar. Además, la aplicación cambia visualmente las tareas completadas.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Funcionalidades:
+- Visualización de la lista de tareas.
+- Marcado de tareas como completadas.
+- Eliminación de tareas de la lista.
 
-## Build
+### Implementación:
+- Uso de un array `tasks` para almacenar las tareas.
+- Uso de `@for` para iterar sobre las tareas y mostrarlas en la interfaz de usuario.
+- Uso de clases CSS condicionales con `ngClass` para cambiar el estilo visual de las tareas completadas.
+- Uso del evento `taskDeleted` para notificar la eliminación de una tarea.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Componente `FormularioTarea`:
 
-## Running unit tests
+El componente `FormularioTarea` contiene un formulario que permite a los usuarios agregar nuevas tareas a la lista. El formulario incluye campos para el título y la descripción de la tarea.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Funcionalidades:
+- Formulario para agregar nuevas tareas.
 
-## Running end-to-end tests
+### Implementación:
+- Uso de un formulario reactivo (`ReactiveForms`) con `FormBuilder`.
+- Captura de eventos de envío (`ngSubmit`) para agregar nuevas tareas al array `tasks` en el componente `ListaTareas`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Comunicación entre Componentes:
 
-## Further help
+La comunicación entre componentes se logra mediante el uso de eventos (`EventEmitter`). El componente `ListaTareas` emite el evento `taskDeleted` cuando una tarea es eliminada. El componente `FormularioTarea` recibe este evento y realiza la lógica necesaria para eliminar la tarea de la lista.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Documentación del Código:
+
+- Comentarios descriptivos en el código para explicar la funcionalidad de cada método y componente.
+- Uso de nombres de variables y métodos significativos para mejorar la legibilidad del código.
+- Documentación sobre el uso de `ReactiveForms` y `@for` para mejorar la comprensión del código.
+
+La aplicación de TODO List en Angular es una solución eficaz y bien estructurada que proporciona una experiencia de usuario intuitiva y funcionalidad completa para la gestión de tareas.
